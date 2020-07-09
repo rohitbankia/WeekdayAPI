@@ -19,6 +19,7 @@ namespace EdgeDriverTest
             // Initialize edge driver 
             var options = new EdgeOptions
             {
+                UseInPrivateBrowsing = true,
                 PageLoadStrategy = PageLoadStrategy.Normal
             };
             _driver = new EdgeDriver(options);
@@ -27,9 +28,8 @@ namespace EdgeDriverTest
         [TestMethod]
         public void VerifyPageTitle()
         {
-            // Replace with your own test logic
-            _driver.Url = "https://www.bing.com";
-            Assert.AreEqual("Bing", _driver.Title);
+            _driver.Url = "http://localhost:4200";
+            Assert.AreEqual("Weekday", _driver.Title);
         }
 
         [TestCleanup]
